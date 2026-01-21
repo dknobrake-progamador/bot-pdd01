@@ -1,3 +1,6 @@
+/**
+ * ===== EXPRESS (OBRIGATÓRIO PARA O RENDER) =====
+ */
 const express = require('express');
 const app = express();
 
@@ -8,20 +11,17 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Servidor ativo na porta', PORT);
+  console.log('Servidor HTTP ativo na porta', PORT);
 });
 
 /**
- * BOT PDD – Estável (whatsapp-web.js) + Pin WhatsApp Web (fix markedUnread)
- * ALTERAÇÕES:
- * 1) Bloqueio total do número 5521976712896 (não lê / não processa)
- * 2) ID do cliente = número do telefone (somente dígitos)
+ * ===== BOT WHATSAPP PDD =====
  */
-
 const fs = require("fs");
 const path = require("path");
 const qrcode = require("qrcode-terminal");
 const { Client, LocalAuth } = require("whatsapp-web.js");
+
 
 // ===================== CONFIG =====================
 const configPath = path.join(__dirname, "config.json");
