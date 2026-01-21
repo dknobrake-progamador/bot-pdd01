@@ -1,0 +1,19 @@
+{
+  "botName": "PDD-BOT",
+  "timezone": "America/Sao_Paulo",
+  "groups": {
+    "clientGroupNames": [
+      "Despachantes do Brasil",
+      "Despachantes + Painel (GP Eliete)"
+    ],
+    "controlGroupName": "HISTORICO"
+  },
+  "notifyPrivatesE164": [
+    "+5521978818116",
+    "+5521997724345",
+    "+5521971532697"
+  ],
+  "ignoreNumbersE164": [
+    "+5521976712896"
+  ]
+}
