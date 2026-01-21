@@ -1,3 +1,16 @@
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bot WhatsApp PDD rodando 🚀');
+});
+
+app.listen(PORT, () => {
+  console.log('Servidor ativo na porta', PORT);
+});
+
 /**
  * BOT PDD – Estável (whatsapp-web.js) + Pin WhatsApp Web (fix markedUnread)
  * ALTERAÇÕES:
@@ -272,9 +285,16 @@ const client = new Client({
     strict: true
   },
 
+  // ✅ Render/Linux precisa headless + flags extras
   puppeteer: {
-    headless: false,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--no-zygote",
+      "--disable-gpu"
+    ]
   }
 });
 
